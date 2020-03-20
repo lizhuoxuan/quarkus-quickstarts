@@ -34,7 +34,7 @@ for help setting up your environment.
 
 Launch the Maven build on the checked out sources of this demo:
 
-> ./mvnw package
+> ./mvnw install
 
 Note that running this command will start an Elasticsearch cluster, start a PostgreSQL instance and run the tests.
 
@@ -48,7 +48,7 @@ You can launch a test instance easily from the project directory:
 
 If you prefer using Docker:
 
-> docker run -it --rm=true --name elasticsearch_quarkus_test -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.5.0
+> docker run -it --rm=true --name elasticsearch_quarkus_test -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.6.0
 
 Alternatively you can setup an Elasticsearch instance in any another way.
 
@@ -80,7 +80,7 @@ conventional jar file.
 
 First compile it:
 
-> ./mvnw package
+> ./mvnw install
 
 Note that this command will start a PostgreSQL instance and an Elasticsearch cluster to execute the tests.
 Thus your PostgreSQL and Elasticsearch containers need to be stopped.
@@ -103,7 +103,7 @@ Compiling a native executable takes a bit longer, as GraalVM performs additional
 steps to remove unnecessary codepaths. Use the  `native` profile to compile a
 native executable:
 
-> ./mvnw package -Dnative
+> ./mvnw install -Dnative
 
 After getting a cup of coffee, you'll be able to run this binary directly:
 
@@ -135,5 +135,5 @@ As well as running the DB on Kubernetes, a service needs to be exposed for the d
 Then, rebuild demo docker image with a system property that points to the DB. 
 
 ```bash
--Dquarkus.datasource.url=jdbc:postgresql://<DB_SERVICE_NAME>/quarkus_test
+-Dquarkus.datasource.jdbc.url=jdbc:postgresql://<DB_SERVICE_NAME>/quarkus_test
 ```

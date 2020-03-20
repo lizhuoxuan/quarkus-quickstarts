@@ -1,7 +1,5 @@
 package org.acme.vertx;
 
-import java.util.concurrent.CompletionStage;
-
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -10,8 +8,9 @@ import javax.ws.rs.core.MediaType;
 
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
-import io.vertx.axle.core.eventbus.EventBus;
-import io.vertx.axle.core.eventbus.Message;
+import io.smallrye.mutiny.Uni;
+import io.vertx.mutiny.core.eventbus.EventBus;
+import io.vertx.mutiny.core.eventbus.Message;
 
 @Path("/async")
 public class EventResource {
@@ -22,8 +21,8 @@ public class EventResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     @Path("{name}")
-    public CompletionStage<String> greeting(@PathParam String name) {
-        return bus.<String>request("greeting", name)
-                .thenApply(Message::body);
+    public Uni<String> greeting(@PathParam String name) {
+        return bus.<String> request("greeting", name)
+                .onItem().apply(Message::body);
     }
 }

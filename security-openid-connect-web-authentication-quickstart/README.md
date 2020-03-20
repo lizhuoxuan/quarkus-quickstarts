@@ -37,16 +37,16 @@ Launch the Maven build on the checked out sources of this demo:
 To start a Keycloak Server you can use Docker and just run the following command:
 
 ```bash
-docker run --name keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8180:8080 quay.io/keycloak/keycloak:7.0.1
+docker run --name keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8180:8080 quay.io/keycloak/keycloak:9.0.0
 ```
 
-You should be able to access your Keycloak Server at http://localhost:8180/auth[localhost:8180/auth].
+You should be able to access your Keycloak Server at [localhost:8180/auth](http://localhost:8180/auth).
 
 Log in as the `admin` user to access the Keycloak Administration Console.
 Username should be `admin` and password `admin`.
 
 Import the [realm configuration file](config/quarkus-realm.json) to create a new realm.
-For more details, see the Keycloak documentation about how to https://www.keycloak.org/docs/latest/server_admin/index.html#_create-realm[create a new realm].
+For more details, see the Keycloak documentation about how to [create a new realm](https://www.keycloak.org/docs/latest/server_admin/index.html#_create-realm).
 
 ### Live coding with Quarkus
 
@@ -72,12 +72,14 @@ This command will leave Quarkus running in the foreground listening on port 8080
     - You should have access to a HTML page that shows information based on the ID Token, Access Token and Refresh Token issued
     to the application. Where these tokens are available for injection as you can see in the `TokenResource` JAX-RS Resource.
 
+_NOTE:_ Running the tests with, for instance, `mvn package` requires the Keycloak server to be down as it will launch its own one. However, when running the application, make sure it is up with the realm properly configured.
+
 ### Run Quarkus in JVM mode
 
 When you're done iterating in developer mode, you can run the application as a
 conventional jar file. First compile it:
 
-> ./mvnw package
+> ./mvnw install
 
 Then run it:
 
@@ -96,7 +98,7 @@ Compiling a native executable takes a bit longer, as GraalVM performs additional
 steps to remove unnecessary codepaths. Use the  `native` profile to compile a
 native executable:
 
-> ./mvnw package -Dnative
+> ./mvnw install -Dnative
 
 After getting a cup of coffee, you'll be able to run this executable directly:
 

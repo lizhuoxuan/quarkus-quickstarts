@@ -1,7 +1,5 @@
 package org.acme.opentracing;
 
-import java.net.URI;
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -9,13 +7,17 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
+
 import org.eclipse.microprofile.rest.client.RestClientBuilder;
+import org.jboss.logging.Logger;
 
 @Path("/")
 public class TracedResource {
 
+    private static final Logger LOG = Logger.getLogger(TracedResource.class);
+
     @Inject
-    private FrancophoneService exampleBean;
+    FrancophoneService exampleBean;
 
     @Context
     private UriInfo uriInfo;
@@ -24,6 +26,7 @@ public class TracedResource {
     @Path("/hello")
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
+        LOG.info("hello");
         return "hello";
     }
 
@@ -32,8 +35,8 @@ public class TracedResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String chain() {
         ResourceClient resourceClient = RestClientBuilder.newBuilder()
-            .baseUri(uriInfo.getBaseUri())
-            .build(ResourceClient.class);
+                .baseUri(uriInfo.getBaseUri())
+                .build(ResourceClient.class);
         return "chain -> " + exampleBean.bonjour() + " -> " + resourceClient.hello();
     }
 }

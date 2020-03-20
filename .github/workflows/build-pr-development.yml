@@ -9,17 +9,25 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     strategy:
+      fail-fast: false
       matrix:
         java: [ 8, 11 ]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: actions/cache@v1
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
-      - name: Install JDK {{ matrix.java }}
+      - name: Check Wildcards
+        run: |
+          if [ $(git grep import | grep '\*;' | grep -E -v '(.mvn/|README.md|CONTRIBUTING.md)' | wc -l) != 0 ]; then
+            echo "Please don't use star imports in your Java files: "
+            git grep import | grep '\*;' | grep -E -v '(.mvn/|README.md|CONTRIBUTING.md)'
+            exit 1
+          fi
+      - name: Install JDK ${{ matrix.java }}
         uses: joschi/setup-jdk@v1.0.0
         with:
           java-version: openjdk${{ matrix.java }}

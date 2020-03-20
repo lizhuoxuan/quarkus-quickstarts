@@ -40,7 +40,7 @@ for help setting up your environment.
 
 Launch the Maven build on the checked out sources of this demo:
 
-> ./mvnw package
+> ./mvnw install
 
 ## Starting and Configuring the Keycloak Server
 
@@ -50,13 +50,13 @@ To start a Keycloak Server you can use Docker and just run the following command
 docker run --name keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8180:8080 quay.io/keycloak/keycloak:7.0.1
 ```
 
-You should be able to access your Keycloak Server at http://localhost:8180/auth[localhost:8180/auth].
+You should be able to access your Keycloak Server at [localhost:8180/auth](http://localhost:8180/auth).
 
 Log in as the `admin` user to access the Keycloak Administration Console.
 Username should be `admin` and password `admin`.
 
 Import the [realm configuration file](config/quarkus-realm.json) to create a new realm.
-For more details, see the Keycloak documentation about how to https://www.keycloak.org/docs/latest/server_admin/index.html#_create-realm[create a new realm].
+For more details, see the Keycloak documentation about how to [create a new realm](https://www.keycloak.org/docs/latest/server_admin/index.html#_create-realm).
 
 ### Live coding with Quarkus
 
@@ -115,7 +115,7 @@ export access_token=$(\
 When you're done iterating in developer mode, you can run the application as a
 conventional jar file. First compile it:
 
-> ./mvnw package
+> ./mvnw install
 
 Then run it:
 
@@ -134,7 +134,7 @@ Compiling a native executable takes a bit longer, as GraalVM performs additional
 steps to remove unnecessary codepaths. Use the  `native` profile to compile a
 native executable:
 
-> ./mvnw package -Dnative
+> ./mvnw install -Dnative
 
 After getting a cup of coffee, you'll be able to run this executable directly:
 

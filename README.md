@@ -1,15 +1,40 @@
-# Getting Started Guides
+# QuickStarts for Getting Started Guides
 
-This repository contains a set of examples about the Quarkus framework.
+This repository contains a set of Quickstarts for the Quarkus framework. Each of them have a Getting started guide.
 
-See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples:
+## Requirements
+
+To compile and run these demos you will need:
+
+- JDK 8 or 11+
+- GraalVM
+
+See the [Building a Native Executable guide](https://quarkus.io/guides/building-native-image) for help setting up your environment.
+
+## Use alternative platforms
+
+These quickstart by default currently uses the Quarkus core BOM.
+
+If you want to use an alternative BOM when building the quickstart you can override the `quarkus.platform.*` properties. The following example shows how to set `quarkus.platform.artifact-id` to use the universe-bom.
+
+```
+mvn -Dquarkus.platform.artifact-id=quarkus-universe-bom clean install
+```
+
+## Contributions
+
+See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
+
+## Quick Start list
 
 * [Getting Started](./getting-started): Application creation, Rest endpoint, Dependency Injection, Test, Packaging
-* [Getting Started - Async](./getting-started-async): Illustrate how to use `CompletionStage` to handle asynchronous actions
+* [Getting Started - Reactive](./getting-started-reactive): Getting started with Reactive and Quarkus
+* [Getting Started - Async](./getting-started-async): Illustrate how to use `Uni` to handle asynchronous actions
 * [Getting Started - Knative](./getting-started-knative): Deployment of the Knative service to Kubernetes and/or OpenShift
 * [Getting Started - Testing](./getting-started-testing): How to test your application
 * [Application Configuration](./config-quickstart): How to configure your application
 * [Startup and Shutdown actions](./lifecycle-quickstart): Explains how to execute code when the application starts and stops
+* [Getting Started - Reactive CRUD](./getting-started-reactive-crud): Reactive REST API with a (reactive) database backend
 
 
 * [AMQP](./amqp-quickstart): How to interact with AMQP using MicroProfile reactive messaging
@@ -27,10 +52,11 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples:
 * [MicroProfile Metrics](./microprofile-metrics-quickstart): How to use MicroProfile Metrics
 * [MongoDB](./mongodb-quickstart): How to connect to a MongoDB datastore
 * [MongoDB with Panache](./mongodb-panache-quickstart): Simplify your MongoDB applications with Panache
-* [MicroPofile Messaging MQTT](./mqtt-quickstart): How to interact with MQTT using MicroProfile reactive messaging
+* [MicroProfile Messaging MQTT](./mqtt-quickstart): How to interact with MQTT using MicroProfile reactive messaging
 * [Neo4j](./neo4j-quickstart): How to connect to a Neo4j graph datastore
 * [OpenAPI and Swagger UI](./openapi-swaggerui-quickstart): Use OpenAPI and Swagger UI to expose your REST API and test your REST services
 * [OpenTracing and Jaeger](./opentracing-quickstart): How to use MicroProfile OpenTracing and Jaeger to monitor application performances
+* [OptaPlanner](./optaplanner-quickstart): How to use OptaPlanner to optimize business resources
 * [Quartz](./quartz-quickstart): How to schedule periodic clustered jobs
 * [Qute](./qute-quickstart): How to use the Qute templating engine in Quarkus
 * [Reactive Routes](./reactive-routes-quickstart): How to use Reactive Routes in Quarkus
@@ -42,6 +68,7 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples:
 * [Security with MicroProfile JWT](./security-jwt-quickstart): How to use MicroProfile JWT RBAC
 * [Security with OAuth2 opaque tokens](./security-oauth2-quickstart): How to use our security layer with OAuth2 opaque tokens
 * [Security with OpenId Connect](./security-openid-connect-quickstart): How to use OpenId Connect and [Keycloak](https://www.keycloak.org)
+* [Supporting Multi-Tenancy in OpenID Connect Applications](./security-openid-connect-multi-tenancy): How to use OpenId Connect and [Keycloak](https://www.keycloak.org)
 * [Spring DI compatibility layer](./spring-di-quickstart): How to use our Spring Dependency Injection compatibility layer
 * [Spring Data extension](./spring-data-jpa-quickstart): How to use the Quarkus extension for the Spring Data API
 * [Spring Web extension](./spring-web-quickstart): How to use the Quarkus extension for the Spring Web API
@@ -51,14 +78,7 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples:
 * [Validation with Hibernate Validator](./validation-quickstart): How to use Hibernate Validator/Bean Validation in your REST services
 * [Using Vert.x](./vertx-quickstart): How to use the Vert.x extension
 * [Using Web Sockets](./websockets-quickstart): Demonstrate how to use web sockets and serve static assets
+* [Context Propagation](./context-propagation): Demonstrate how to use context propagation in your reactive applications
 
 There is documentation published at <https://quarkus.io> (docs' [sources are here](https://github.com/quarkusio/quarkus/tree/master/docs/src/main/asciidoc)).
 
-## Requirements
-
-To compile and run these demos you will need:
-
-- JDK 8 or 11+
-- GraalVM
-
-See the [Building a Native Executable guide](https://quarkus.io/guides/building-native-image) for help setting up your environment.
