@@ -9,11 +9,17 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>amazon-dynamodb-quickstart</module>
+        <module>amazon-kms-quickstart</module>
+        <module>amazon-s3-quickstart</module>
+        <module>amazon-ses-quickstart</module>
+        <module>amazon-sns-quickstart</module>
+        <module>amazon-sqs-quickstart</module>
         <module>amqp-quickstart</module>
         <module>cache-quickstart</module>
         <module>config-quickstart</module>
         <module>context-propagation</module>
-        <module>dynamodb-quickstart</module>
+        <module>funqy-quickstarts</module>
         <module>getting-started</module>
         <module>getting-started-async</module>
         <module>getting-started-reactive</module>
@@ -21,7 +27,10 @@
         <module>getting-started-knative</module>
         <module>getting-started-testing</module>
         <module>hibernate-orm-quickstart</module>
+        <module>grpc-plain-text-quickstart</module>
+        <module>grpc-tls-quickstart</module>
         <module>hibernate-orm-panache-quickstart</module>
+        <module>hibernate-orm-quickstart-multi-tenancy</module>
         <module>hibernate-search-elasticsearch-quickstart</module>
         <module>infinispan-client-quickstart</module>
         <module>jms-quickstart</module>
@@ -31,6 +40,7 @@
         <module>optaplanner-quickstart</module>
         <module>lifecycle-quickstart</module>
         <module>microprofile-fault-tolerance-quickstart</module>
+        <module>microprofile-graphql-quickstart</module>
         <module>microprofile-health-quickstart</module>
         <module>microprofile-metrics-quickstart</module>
         <module>mongodb-quickstart</module>
@@ -47,6 +57,7 @@
         <module>rest-json-quickstart</module>
         <module>scheduler-quickstart</module>
         <module>security-jdbc-quickstart</module>
+        <module>security-jpa-quickstart</module>
         <module>security-jwt-quickstart</module>
         <module>security-keycloak-authorization-quickstart</module>
         <module>security-oauth2-quickstart</module>
@@ -64,5 +75,6 @@
         <module>validation-quickstart</module>
         <module>vertx-quickstart</module>
         <module>websockets-quickstart</module>
+        <module>liquibase-quickstart</module>
     </modules>
 </project>

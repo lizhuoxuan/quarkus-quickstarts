@@ -38,9 +38,15 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 
 
 * [AMQP](./amqp-quickstart): How to interact with AMQP using MicroProfile reactive messaging
-* [Amazon DynamoDB](./dynamodb-quickstart): How to connect to an Amazon DynamoDB datastore
+* [Amazon DynamoDB](./amazon-dynamodb-quickstart): How to connect to an Amazon DynamoDB datastore
+* [Amazon KMS](./amazon-kms-quickstart): How to connect to an Amazon KMS (Key Management Service)
+* [Amazon SES](./amazon-ses-quickstart): How to connect to an Amazon SES (Simple Email Service)
+* [Amazon S3](./amazon-s3-quickstart): How to connect to an Amazon S3 cloud storage
+* [Amazon SNS](./amazon-sns-quickstart): How to connect to an Amazon SNS (Simple Messaging Service)
+* [Amazon SQS](./amazon-sqs-quickstart): How to connect to an Amazon SQS (Simple Queue Service)
 * [Hibernate ORM and RESTEasy](./hibernate-orm-quickstart): Exposing a CRUD service over REST using Hibernate ORM to connect to a PostgreSQL database
 * [Hibernate ORM with Panache and RESTEasy](./hibernate-orm-panache-quickstart): Exposing a CRUD service over REST using Panache to connect to a PostgreSQL database
+* [Hibernate ORM Multitenancy](./hibernate-orm-quickstart-multi-tenancy): Multitenant CRUD service over REST using Hibernate ORM to connect to a PostgreSQL database (schema or database approach)
 * [Hibernate Search + Elasticsearch](./hibernate-search-elasticsearch-quickstart): Index your Hibernate entities in Elasticsearch to get full text search
 * [Infinispan Client](./infinispan-client-quickstart): How to use Infinispan Client. Covers creating caches and simple get/put
 * [Artemis JMS](./jms-quickstart): How to use the Artemis JMS extension
@@ -48,6 +54,7 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 * [Kafka Streams](./kafka-streams-quickstart): Use the Apache Kafka Streams API to implement stream processing applications based on Apache Kafka
 * [Kogito](./kogito-quickstart): How to use Kogito for business process automation with Drools and jBPM
 * [MicroProfile Fault Tolerance](./microprofile-fault-tolerance-quickstart): How to use MicroProfile Fault Tolerance
+* [MicroProfile GraphQL](./microprofile-graphql-quickstart): How to use MicroProfile GraphQL
 * [MicroProfile Health](./microprofile-health-quickstart): How to use MicroProfile Health
 * [MicroProfile Metrics](./microprofile-metrics-quickstart): How to use MicroProfile Metrics
 * [MongoDB](./mongodb-quickstart): How to connect to a MongoDB datastore
@@ -64,7 +71,8 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 * [REST Client Multipart](./rest-client-multipart-quickstart): Handle multipart with MicroProfile's REST Client
 * [JSON REST services](./rest-json-quickstart): How to write JSON REST services
 * [Scheduling periodic tasks](./scheduler-quickstart): How to schedule periodic jobs
-* [Security with Users stored in a Database](./security-jdbc-quickstart): Store your users in a database and secure your application
+* [Security with Users stored in a Database (JDBC)](./security-jdbc-quickstart): Store your users in a database and secure your application with JDBC
+* [Security with Users stored in a Database (JPA)](./security-jpa-quickstart): Store your users in a database and secure your application with JPA
 * [Security with MicroProfile JWT](./security-jwt-quickstart): How to use MicroProfile JWT RBAC
 * [Security with OAuth2 opaque tokens](./security-oauth2-quickstart): How to use our security layer with OAuth2 opaque tokens
 * [Security with OpenId Connect](./security-openid-connect-quickstart): How to use OpenId Connect and [Keycloak](https://www.keycloak.org)
@@ -80,6 +88,13 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 * [Using Vert.x](./vertx-quickstart): How to use the Vert.x extension
 * [Using Web Sockets](./websockets-quickstart): Demonstrate how to use web sockets and serve static assets
 * [Context Propagation](./context-propagation): Demonstrate how to use context propagation in your reactive applications
+* [Funqy HTTP](./funqy-quickstarts/funqy-http-quickstart): Funqy functions as HTTP/REST endpoints
+* [Funqy AWS Lambda](./funqy-quickstarts/funqy-amazon-lambda-quickstart): Funqy functions as deployed to AWS Lambda
+* [Funqy AWS Lambda HTTP](./funqy-quickstarts/funqy-amazon-lambda-http-quickstart): Funqy functions as deployed to AWS Lambda invokable via HTTP/REST
+* [Funqy Azure Functions HTTP](./funqy-quickstarts/funqy-azure-functions-quickstart): Funqy functions as deployed to Azure Functions invokable via HTTP/REST
+* [Funqy Knative Events](./funqy-quickstarts/funqy-knative-events-quickstart): Funqy functions integration with Knative Events
+* [gRPC Plain text Quickstart](./grpc-plain-text-quickstart): How to use Quarkus gRPC extension with plain text communication
+* [gRPC TLS Quickstart](./grpc-tls-quickstart): How to use Quarkus gRPC extension with TLS communication
 
 There is documentation published at <https://quarkus.io> (docs' [sources are here](https://github.com/quarkusio/quarkus/tree/master/docs/src/main/asciidoc)).
 
