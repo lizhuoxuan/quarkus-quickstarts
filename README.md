@@ -44,6 +44,7 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 * [Amazon S3](./amazon-s3-quickstart): How to connect to an Amazon S3 cloud storage
 * [Amazon SNS](./amazon-sns-quickstart): How to connect to an Amazon SNS (Simple Messaging Service)
 * [Amazon SQS](./amazon-sqs-quickstart): How to connect to an Amazon SQS (Simple Queue Service)
+* [Hibernate Reactive and RESTEasy](./hibernate-reactive-quickstart): Exposing a CRUD service over REST using Hibernate Reactive to connect to a PostgreSQL database
 * [Hibernate ORM and RESTEasy](./hibernate-orm-quickstart): Exposing a CRUD service over REST using Hibernate ORM to connect to a PostgreSQL database
 * [Hibernate ORM with Panache and RESTEasy](./hibernate-orm-panache-quickstart): Exposing a CRUD service over REST using Panache to connect to a PostgreSQL database
 * [Hibernate ORM Multitenancy](./hibernate-orm-quickstart-multi-tenancy): Multitenant CRUD service over REST using Hibernate ORM to connect to a PostgreSQL database (schema or database approach)
@@ -51,6 +52,7 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 * [Infinispan Client](./infinispan-client-quickstart): How to use Infinispan Client. Covers creating caches and simple get/put
 * [Artemis JMS](./jms-quickstart): How to use the Artemis JMS extension
 * [Kafka](./kafka-quickstart): Use MicroProfile Reactive Messaging to interact with Apache Kafka
+* [Kafka and Hibernate with Panache](./kafka-panache-quickstart): Shows how to combine Kafka and Hibernate with Panache
 * [Kafka Streams](./kafka-streams-quickstart): Use the Apache Kafka Streams API to implement stream processing applications based on Apache Kafka
 * [Kogito](./kogito-quickstart): How to use Kogito for business process automation with Drools and jBPM
 * [MicroProfile Fault Tolerance](./microprofile-fault-tolerance-quickstart): How to use MicroProfile Fault Tolerance
@@ -82,6 +84,7 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 * [Spring Web extension](./spring-web-quickstart): How to use the Quarkus extension for the Spring Web API
 * [Spring Security extension](./spring-security-quickstart): How to use the Quarkus extension for the Spring Security API
 * [Spring Boot Properties extension](./spring-boot-properties-quickstart): How to use the Quarkus extension for the Spring Boot properties
+* [Spring Scheduled extension](./spring-scheduled-quickstart): How to use the Quarkus extension for the Spring Scheduled annotation
 * [Using STM](./software-transactional-memory-quickstart): How to use the Narayana Software Transactional Memory extension
 * [Apache Tika](./tika-quickstart): Extract metadata and content from your documents
 * [Validation with Hibernate Validator](./validation-quickstart): How to use Hibernate Validator/Bean Validation in your REST services

@@ -27,6 +27,7 @@
         <module>getting-started-knative</module>
         <module>getting-started-testing</module>
         <module>hibernate-orm-quickstart</module>
+        <module>hibernate-reactive-quickstart</module>
         <module>grpc-plain-text-quickstart</module>
         <module>grpc-tls-quickstart</module>
         <module>hibernate-orm-panache-quickstart</module>
@@ -69,6 +70,7 @@
         <module>spring-web-quickstart</module>
         <module>spring-data-jpa-quickstart</module>
         <module>spring-security-quickstart</module>
+        <module>spring-scheduled-quickstart</module>
         <module>spring-boot-properties-quickstart</module>
         <module>tests-with-coverage-quickstart</module>
         <module>tika-quickstart</module>
