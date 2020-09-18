@@ -8,11 +8,11 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <quarkus-plugin.version>1.6.0.Final</quarkus-plugin.version>
+        <quarkus-plugin.version>1.8.0.Final</quarkus-plugin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>1.6.0.Final</quarkus.platform.version>
-        <surefire-plugin.version>2.22.1</surefire-plugin.version>
+        <quarkus.platform.version>1.8.0.Final</quarkus.platform.version>
+        <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
         <compiler-plugin.version>3.8.0</compiler-plugin.version>
         <docker-plugin.version>0.28.0</docker-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -35,9 +35,8 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-hibernate-reactive</artifactId>
-            <version>${quarkus-plugin.version}</version>
         </dependency>
-        <!--Hibernate Reactive uses the reactive-pg-client with PostgreSQL under the hood -->
+        <!-- Hibernate Reactive uses the reactive-pg-client with PostgreSQL under the hood -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-reactive-pg-client</artifactId>
@@ -58,14 +57,7 @@
             <artifactId>quarkus-resteasy-mutiny</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-hibernate-reactive-deployment</artifactId>
-            <scope>provided</scope>
-            <version>${quarkus-plugin.version}</version>
-        </dependency>
-
-        <!-- Testing: -->
+        <!-- Testing -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>

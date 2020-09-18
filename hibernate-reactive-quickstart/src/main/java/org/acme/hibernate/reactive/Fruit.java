@@ -3,7 +3,6 @@ package org.acme.hibernate.reactive;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
@@ -12,12 +11,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "known_fruits")
-@NamedQuery(name = "Fruits.findAll", query = "SELECT f FROM Fruit f ORDER BY f.name", hints = @QueryHint(name = "org.hibernate.cacheable", value = "true"))
+@NamedQuery(name = "Fruits.findAll", query = "SELECT f FROM Fruit f ORDER BY f.name")
 public class Fruit {
 
     @Id
     @SequenceGenerator(name = "fruitsSequence", sequenceName = "known_fruits_id_seq", allocationSize = 1, initialValue = 10)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "fruitsSequence")
+    @GeneratedValue(generator = "fruitsSequence")
     private Integer id;
 
     @Column(length = 40, unique = true)

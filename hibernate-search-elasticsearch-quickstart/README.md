@@ -42,13 +42,9 @@ Note that running this command will start an Elasticsearch cluster, start a Post
 
 ### Start an Elasticsearch cluster
 
-You can launch a test instance easily from the project directory:
+To set up an Elasticsearch instance using Docker:
 
-> ./mvnw elasticsearch:runforked -Des.setAwait=true
-
-If you prefer using Docker:
-
-> docker run -it --rm=true --name elasticsearch_quarkus_test -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.7.0
+> docker run -it --rm=true --name elasticsearch_quarkus_test -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.8.0
 
 Alternatively you can setup an Elasticsearch instance in any another way.
 
@@ -66,7 +62,7 @@ Connection properties for the Agroal datasource are defined in the standard Quar
 The Maven Quarkus plugin provides a development mode that supports
 live coding. To try this out:
 
->  mvn quarkus:dev
+>  ./mvnw quarkus:dev
 
 In this mode you can make changes to the code and have the changes immediately applied, by just refreshing your browser.
 

@@ -45,6 +45,7 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 * [Amazon SNS](./amazon-sns-quickstart): How to connect to an Amazon SNS (Simple Messaging Service)
 * [Amazon SQS](./amazon-sqs-quickstart): How to connect to an Amazon SQS (Simple Queue Service)
 * [Hibernate Reactive and RESTEasy](./hibernate-reactive-quickstart): Exposing a CRUD service over REST using Hibernate Reactive to connect to a PostgreSQL database
+* [Hibernate Reactive and Vert.x Web](./hibernate-reactive-routes-quickstart): Exposing a CRUD service with Reactive Routes using Hibernate Reactive to connect to a PostgreSQL database
 * [Hibernate ORM and RESTEasy](./hibernate-orm-quickstart): Exposing a CRUD service over REST using Hibernate ORM to connect to a PostgreSQL database
 * [Hibernate ORM with Panache and RESTEasy](./hibernate-orm-panache-quickstart): Exposing a CRUD service over REST using Panache to connect to a PostgreSQL database
 * [Hibernate ORM Multitenancy](./hibernate-orm-quickstart-multi-tenancy): Multitenant CRUD service over REST using Hibernate ORM to connect to a PostgreSQL database (schema or database approach)
@@ -55,6 +56,7 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 * [Kafka and Hibernate with Panache](./kafka-panache-quickstart): Shows how to combine Kafka and Hibernate with Panache
 * [Kafka Streams](./kafka-streams-quickstart): Use the Apache Kafka Streams API to implement stream processing applications based on Apache Kafka
 * [Kogito](./kogito-quickstart): How to use Kogito for business process automation with Drools and jBPM
+* [Micrometer](./micrometer-quickstart): How to use Micrometer to gather metrics
 * [MicroProfile Fault Tolerance](./microprofile-fault-tolerance-quickstart): How to use MicroProfile Fault Tolerance
 * [MicroProfile GraphQL](./microprofile-graphql-quickstart): How to use MicroProfile GraphQL
 * [MicroProfile Health](./microprofile-health-quickstart): How to use MicroProfile Health
@@ -96,8 +98,15 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 * [Funqy AWS Lambda HTTP](./funqy-quickstarts/funqy-amazon-lambda-http-quickstart): Funqy functions as deployed to AWS Lambda invokable via HTTP/REST
 * [Funqy Azure Functions HTTP](./funqy-quickstarts/funqy-azure-functions-quickstart): Funqy functions as deployed to Azure Functions invokable via HTTP/REST
 * [Funqy Knative Events](./funqy-quickstarts/funqy-knative-events-quickstart): Funqy functions integration with Knative Events
+* [Funqy Google Cloud Functions](./funqy-quickstarts/funqy-google-cloud-functions-quickstart): Funqy functions as deployed to Google Cloud Functions
 * [gRPC Plain text Quickstart](./grpc-plain-text-quickstart): How to use Quarkus gRPC extension with plain text communication
 * [gRPC TLS Quickstart](./grpc-tls-quickstart): How to use Quarkus gRPC extension with TLS communication
+
+* [Using Vert.x Redis Client](./redis-quickstart): Demonstrate how to use Vert.x Redis Client
+
+* [Google Cloud Functions](./google-cloud-functions-quickstart): How to create Google Cloud Functions
+* [Google Cloud Functions HTTP](./google-cloud-functions-http-quickstart): How to bind our HTTP layer (JAX-RS, Servlet or Reactive Route) to Google Cloud Functions
+
 
 There is documentation published at <https://quarkus.io> (docs' [sources are here](https://github.com/quarkusio/quarkus/tree/master/docs/src/main/asciidoc)).
 
