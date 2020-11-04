@@ -1,10 +1,10 @@
 ---
-name: "Native Test - development"
+name: "Native Tests - Development"
 
 # Adding the dispatch event to allow restarting the build on demand
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 2 * * *'
   repository_dispatch:
 
 jobs:
@@ -18,15 +18,21 @@ jobs:
       - name: Reclaim Disk Space
         run: .github/ci-prerequisites.sh
 
-      - uses: actions/cache@v1
+      - name: Get Date
+        id: get-date
+        run: |
+          echo "::set-output name=date::$(/bin/date -u "+%Y-%m")"
+        shell: bash
+      - name: Cache Maven Repository
+        id: cache-maven
+        uses: actions/cache@v2
         with:
           path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+          # refresh cache every month to avoid unlimited growth
+          key: q2maven-native-${{ steps.get-date.outputs.date }}
 
       - name: Install JDK 11
-        uses: joschi/setup-jdk@v2
+        uses: joschi/setup-jdk@68381f2c0646f942f70b69f8e81fe10e1ed5d293
         with:
           java-version: '11'
 
@@ -40,8 +46,7 @@ jobs:
         run: |
           mvn -B clean install --fail-at-end -Pnative -Ddocker \
             -Dquarkus.native.container-build=true \
-            -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-native-image:20.1.0-java11 \
-            -pl '!rest-client-quickstart,!security-jwt-quickstart,!grpc-tls-quickstart'
+            -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-native-image:20.1.0-java11
 
       - name: Check RSS
         env:
@@ -80,6 +85,10 @@ jobs:
           name: pmap
           path: pmap.out
 
+      - name: Delete Local Artifacts From Cache
+        shell: bash
+        run: rm -rf ~/.m2/repository/org/acme
+
       - name: Report
         if: always()
         env:
@@ -92,6 +101,7 @@ jobs:
           sudo apt-get install -y gnupg2 gnupg-agent
           echo Installing SDKMAN
           curl -s "https://get.sdkman.io" | bash
-          source ~/.sdkman/bin/sdkman-init.sh && \
-          sdk install jbang 0.36.1
+          source ~/.sdkman/bin/sdkman-init.sh
+          sed -i -e 's/sdkman_auto_answer=false/sdkman_auto_answer=true/g' ~/.sdkman/etc/config
+          sdk install jbang 0.50.1
           jbang .github/NativeBuildReport.java token="${GITHUB_TOKEN}" status="${STATUS}" issueRepo="quarkusio/quarkus" issueNumber="6588" thisRepo="${GITHUB_REPOSITORY}" runId="${GITHUB_RUN_ID}"
