@@ -49,7 +49,7 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 * [Hibernate ORM and RESTEasy](./hibernate-orm-quickstart): Exposing a CRUD service over REST using Hibernate ORM to connect to a PostgreSQL database
 * [Hibernate ORM with Panache and RESTEasy](./hibernate-orm-panache-quickstart): Exposing a CRUD service over REST using Panache to connect to a PostgreSQL database
 * [Hibernate ORM Multitenancy](./hibernate-orm-quickstart-multi-tenancy): Multitenant CRUD service over REST using Hibernate ORM to connect to a PostgreSQL database (schema or database approach)
-* [Hibernate Search + Elasticsearch](./hibernate-search-elasticsearch-quickstart): Index your Hibernate entities in Elasticsearch to get full text search
+* [Hibernate Search + Elasticsearch](./hibernate-search-orm-elasticsearch-quickstart): Index your Hibernate entities in Elasticsearch to get full text search
 * [Infinispan Client](./infinispan-client-quickstart): How to use Infinispan Client. Covers creating caches and simple get/put
 * [Artemis JMS](./jms-quickstart): How to use the Artemis JMS extension
 * [Kafka](./kafka-quickstart): Use MicroProfile Reactive Messaging to interact with Apache Kafka
@@ -87,6 +87,7 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 * [Spring Security extension](./spring-security-quickstart): How to use the Quarkus extension for the Spring Security API
 * [Spring Boot Properties extension](./spring-boot-properties-quickstart): How to use the Quarkus extension for the Spring Boot properties
 * [Spring Scheduled extension](./spring-scheduled-quickstart): How to use the Quarkus extension for the Spring Scheduled annotation
+* [Spring Data REST extension](./spring-data-rest-quickstart): How to use the Quarkus extension for the Spring Data REST
 * [Using STM](./software-transactional-memory-quickstart): How to use the Narayana Software Transactional Memory extension
 * [Apache Tika](./tika-quickstart): Extract metadata and content from your documents
 * [Validation with Hibernate Validator](./validation-quickstart): How to use Hibernate Validator/Bean Validation in your REST services
@@ -101,6 +102,7 @@ See [CONTRIBUTING](CONTRIBUTING.md) for how to build these examples.
 * [Funqy Google Cloud Functions](./funqy-quickstarts/funqy-google-cloud-functions-quickstart): Funqy functions as deployed to Google Cloud Functions
 * [gRPC Plain text Quickstart](./grpc-plain-text-quickstart): How to use Quarkus gRPC extension with plain text communication
 * [gRPC TLS Quickstart](./grpc-tls-quickstart): How to use Quarkus gRPC extension with TLS communication
+* [Mailer Quickstart](./mailer-quickstart): How to use the Quarkus mailer
 
 * [Using Vert.x Redis Client](./redis-quickstart): Demonstrate how to use Vert.x Redis Client
 

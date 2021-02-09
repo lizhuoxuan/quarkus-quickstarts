@@ -13,7 +13,7 @@ The application can be started using:
 
 ```bash
 mvn quarkus:dev
-```  
+```
 
 Then, open your browser to `http://localhost:8080/prices.html`, and you should see a fluctuating price.
 
@@ -37,4 +37,4 @@ You can compile the application into a native binary using:
 
 and run with:
 
-`./target/kafka-quickstart-1.0-SNAPSHOT-runner` 
+`./target/kafka-quickstart-1.0.0-SNAPSHOT-runner` 

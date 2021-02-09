@@ -5,7 +5,7 @@
 
     <groupId>io.quarkus.quickstarts</groupId>
     <artifactId>quickstart-projects</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -36,7 +36,7 @@
         <module>grpc-tls-quickstart</module>
         <module>hibernate-orm-panache-quickstart</module>
         <module>hibernate-orm-quickstart-multi-tenancy</module>
-        <module>hibernate-search-elasticsearch-quickstart</module>
+        <module>hibernate-search-orm-elasticsearch-quickstart</module>
         <module>infinispan-client-quickstart</module>
         <module>jms-quickstart</module>
         <module>kafka-quickstart</module>
@@ -58,6 +58,7 @@
         <module>quartz-quickstart</module>
         <module>qute-quickstart</module>
         <module>reactive-routes-quickstart</module>
+        <module>reactive-messaging-http-quickstart</module>
         <module>redis-quickstart</module>
         <module>rest-client-quickstart</module>
         <module>rest-client-multipart-quickstart</module>
@@ -78,11 +79,13 @@
         <module>spring-security-quickstart</module>
         <module>spring-scheduled-quickstart</module>
         <module>spring-boot-properties-quickstart</module>
+        <module>spring-data-rest-quickstart</module>
         <module>tests-with-coverage-quickstart</module>
         <module>tika-quickstart</module>
         <module>validation-quickstart</module>
         <module>vertx-quickstart</module>
         <module>websockets-quickstart</module>
         <module>liquibase-quickstart</module>
+        <module>mailer-quickstart</module>
     </modules>
 </project>

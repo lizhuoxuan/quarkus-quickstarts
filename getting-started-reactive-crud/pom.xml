@@ -6,13 +6,13 @@
 
     <groupId>io.quarkus.quickstarts</groupId>
     <artifactId>getting-started-reactive-rest</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
-        <quarkus-plugin.version>1.9.2.Final</quarkus-plugin.version>
+        <quarkus-plugin.version>1.11.1.Final</quarkus-plugin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>1.9.2.Final</quarkus.platform.version>
+        <quarkus.platform.version>1.11.1.Final</quarkus.platform.version>
         <compiler-plugin.version>3.8.1</compiler-plugin.version>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
         <docker-plugin.version>0.28.0</docker-plugin.version>
@@ -20,7 +20,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.parameters>true</maven.compiler.parameters>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <testcontainers.version>1.14.1</testcontainers.version>
+        <testcontainers.version>1.15.1</testcontainers.version>
     </properties>
 
     <dependencyManagement>
@@ -50,7 +50,7 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-resteasy-jsonb</artifactId>
+            <artifactId>quarkus-resteasy-jackson</artifactId>
         </dependency>
 
         <dependency>
@@ -160,7 +160,7 @@
             <id>docker</id>
             <activation>
                 <property>
-                    <name>docker</name>
+                    <name>start-containers</name>
                 </property>
             </activation>
             <build>

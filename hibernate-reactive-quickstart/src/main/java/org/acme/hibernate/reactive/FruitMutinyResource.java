@@ -1,10 +1,9 @@
 package org.acme.hibernate.reactive;
 
+import java.util.List;
 import java.util.function.Function;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.json.Json;
-import javax.json.JsonObjectBuilder;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -20,9 +19,11 @@ import javax.ws.rs.ext.Provider;
 import org.hibernate.reactive.mutiny.Mutiny;
 
 import org.jboss.logging.Logger;
-import org.jboss.resteasy.annotations.jaxrs.PathParam;
+import org.jboss.resteasy.reactive.RestPath;
 
-import io.smallrye.mutiny.Multi;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
 import io.smallrye.mutiny.Uni;
 
 @Path("fruits")
@@ -36,14 +37,14 @@ public class FruitMutinyResource {
     Mutiny.Session mutinySession;
 
     @GET
-    public Multi<Fruit> get() {
+    public Uni<List<Fruit>> get() {
         return mutinySession
-                .createNamedQuery( "Fruits.findAll", Fruit.class ).getResults();
+                .createNamedQuery( "Fruits.findAll", Fruit.class ).getResults().collectItems().asList();
     }
 
     @GET
     @Path("{id}")
-    public Uni<Fruit> getSingle(@PathParam Integer id) {
+    public Uni<Fruit> getSingle(@RestPath Integer id) {
         return mutinySession.find(Fruit.class, id);
     }
 
@@ -61,7 +62,7 @@ public class FruitMutinyResource {
 
     @PUT
     @Path("{id}")
-    public Uni<Response> update(@PathParam Integer id, Fruit fruit) {
+    public Uni<Response> update(@RestPath Integer id, Fruit fruit) {
         if (fruit == null || fruit.getName() == null) {
             throw new WebApplicationException("Fruit name was not set on request.", 422);
         }
@@ -85,7 +86,7 @@ public class FruitMutinyResource {
 
     @DELETE
     @Path("{id}")
-    public Uni<Response> delete(@PathParam Integer id) {
+    public Uni<Response> delete(@RestPath Integer id) {
         // Delete function (never returns null)
         Function<Fruit, Uni<? extends Response>> delete = entity -> mutinySession.remove(entity)
                 .chain(mutinySession::flush)
@@ -121,6 +122,9 @@ public class FruitMutinyResource {
     @Provider
     public static class ErrorMapper implements ExceptionMapper<Exception> {
 
+        @Inject
+        ObjectMapper objectMapper;
+
         @Override
         public Response toResponse(Exception exception) {
             LOGGER.error("Failed to handle request", exception);
@@ -130,16 +134,16 @@ public class FruitMutinyResource {
                 code = ((WebApplicationException) exception).getResponse().getStatus();
             }
 
-            JsonObjectBuilder entityBuilder = Json.createObjectBuilder()
-                    .add("exceptionType", exception.getClass().getName())
-                    .add("code", code);
+            ObjectNode exceptionJson = objectMapper.createObjectNode();
+            exceptionJson.put("exceptionType", exception.getClass().getName());
+            exceptionJson.put("code", code);
 
             if (exception.getMessage() != null) {
-                entityBuilder.add("error", exception.getMessage());
+                exceptionJson.put("error", exception.getMessage());
             }
 
             return Response.status(code)
-                    .entity(entityBuilder.build())
+                    .entity(exceptionJson)
                     .build();
         }
 

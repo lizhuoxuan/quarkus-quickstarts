@@ -47,7 +47,7 @@ Launch the Maven build on the checked out sources of this demo:
 To start a Keycloak Server you can use Docker and just run the following command:
 
 ```bash
-docker run --name keycloak -e DB_VENDOR=H2 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8180:8080 quay.io/keycloak/keycloak:10.0.1
+docker run --name keycloak -e DB_VENDOR=H2 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8180:8080 quay.io/keycloak/keycloak:11.0.2
 ```
 
 You should be able to access your Keycloak Server at [localhost:8180/auth](http://localhost:8180/auth).
@@ -119,7 +119,7 @@ conventional jar file. First compile it:
 
 Then run it:
 
-> java -jar ./target/security-keycloak-authorization-quickstart-1.0-SNAPSHOT-runner.jar
+> java -jar ./target/security-keycloak-authorization-quickstart-1.0.0-SNAPSHOT-runner.jar
 
 Have a look at how fast it boots, or measure the total native memory consumption.
 
@@ -138,4 +138,4 @@ native executable:
 
 After getting a cup of coffee, you'll be able to run this executable directly:
 
-> ./target/security-keycloak-authorization-quickstart-1.0-SNAPSHOT-runner
+> ./target/security-keycloak-authorization-quickstart-1.0.0-SNAPSHOT-runner

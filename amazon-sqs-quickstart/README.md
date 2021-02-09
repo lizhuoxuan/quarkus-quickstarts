@@ -5,7 +5,7 @@ This example showcases how to use the AWS SQS client with Quarkus. As a prerequi
 # AWS SQS local instance
 
 Just run it as follows in order to start SQS locally:
-`docker run --rm --name local-sqs 8010:4576 -e SERVICES=sqs -e START_WEB=0 -d localstack/localstack:0.11.1`
+`docker run --rm --name local-sqs -p 8010:4576 -e SERVICES=sqs -e START_WEB=0 -d localstack/localstack:0.11.1`
 SQS listens on `localhost:8010` for REST endpoints.
 
 Create an AWS profile for your local instance using AWS CLI:
@@ -27,7 +27,7 @@ $> QUEUE_URL=`aws sqs create-queue --queue-name=ColliderQueue --profile localsta
 
 # Run the demo on dev mode
 
-- Run `./mvnw clean package` and then `java -Dqueue.url=$QUEUE_URL -jar ./target/amazon-sqs-quickstart-1.0-SNAPSHOT-runner.jar`
+- Run `./mvnw clean package` and then `java -Dqueue.url=$QUEUE_URL -jar ./target/amazon-sqs-quickstart-1.0.0-SNAPSHOT-runner.jar`
 - In dev mode `./mvnw clean quarkus:dev -Dqueue.url=$QUEUE_URL`
 
 ## Send messages to the queue
@@ -59,7 +59,7 @@ You can compile the application into a native binary using:
 
 and run with:
 
-`./target/amazon-sqs-quickstart-1.0-SNAPSHOT-runner` 
+`./target/amazon-sqs-quickstart-1.0.0-SNAPSHOT-runner` 
 
 
 # Running native in container
